@@ -1,0 +1,62 @@
+.settings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settingsform{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settingslabel{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.settingslabel label{
+   margin-bottom: 5px; 
+   font-size:25px;
+   color:#999;
+}
+
+.settingslabel input{
+    border:none; 
+    border-bottom: 1px solid #999;
+    font-size:25px;
+}
+
+.settingslabel input:focus{
+    outline:none;
+    border-bottom-color: black;
+    border-bottom-width: 2px;
+}
+
+.settingspp{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settingspp img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+}
+
+.fileinput{
+    margin:10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
