@@ -1,16 +1,21 @@
 import './App.css';
-import NavBar from './components/NavBar';
-//import Create from './pages/Create';
-import Settings from './pages/Settings';
-//import Home from './pages/Home';
-//import Single from './pages/Single';
+import {BrowserRouter as Router,Routes,Route } from "react-router-dom"
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import Bloghome from './pages/Bloghome';
+
 
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <Settings/>
+      <Router>
+        <Routes>
+           <Route path = "/home/*" element = {<Bloghome/>}/>
+           <Route path="/login" element={<Login/>}/>
+           <Route path="/signup" element={<SignUp/>}/>
+        </Routes>
+      </Router>
     </div>
   );
 }

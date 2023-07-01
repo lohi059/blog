@@ -19,7 +19,7 @@
 .settingslabel label{
    margin-bottom: 5px; 
    font-size:25px;
-   color:#999;
+   color:rgba(0,0,0,0.5);
 }
 
 .settingslabel input{
@@ -53,7 +53,36 @@
     cursor: pointer;
 }
 
+.settingstitle .settingsupdate{
+    font-size: 30px;
+    color:rgb(253,205,131);
+}
 
+.settingdelete{
+    position: relative;
+    left:100px;
+    margin:10px;
+    background-color: red;
+    color:white;
+    height:30px;
+    border:none;
+    border-radius: 15px;
+}
+
+::placeholder {
+    color: 999;
+  }
+
+.settingssubmit{
+    margin-top:20px;
+    background-color: green;
+    color:white;
+    width: 200px;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 20px;
+    border:none;
+}
 
 
 

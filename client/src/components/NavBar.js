@@ -1,5 +1,6 @@
 import React from 'react'
 import '../stylesheets/navbar.css'
+import {Link} from "react-router-dom"
 import Profile from './Profile'
 
 const NavBar = () => {
@@ -10,7 +11,7 @@ const NavBar = () => {
         </div>
         <div className='topleft'>
             <ul className='toplist'>
-                <li className='toplistitem'>Home</li>
+                <li className='toplistitem'><Link to = "/home" style={{textDecoration:"none",color:'black'}}>Home</Link></li> 
                 <li className='toplistitem'>About</li>
             </ul>  
             <Profile/>
