@@ -11,7 +11,11 @@ const NavBar = () => {
         </div>
         <div className='topleft'>
             <ul className='toplist'>
-                <li className='toplistitem'><Link to = "/home" style={{textDecoration:"none",color:'black'}}>Home</Link></li> 
+                <li className='toplistitem'>
+                  <Link to = "/" className='link'>
+                    Home
+                  </Link>
+                </li> 
                 <li className='toplistitem'>About</li>
             </ul>  
             <Profile/>

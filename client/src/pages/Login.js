@@ -22,7 +22,7 @@ function Login() {
             </div>
             <button  className='loginbtn' >Login</button>
             <div className='alternative'>
-                <p>Don't have an account <span><Link to="/signup" style={{textDecoration:"none",color:'blue'}}>Sign Up</Link></span></p>
+                <p>Don't have an account <span><Link to="/signup" className='link'>Sign Up</Link></span></p>
             </div>
         </form>
        </div> 
