@@ -1,18 +1,34 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import EditNoteOutlinedIcon from '@mui/icons-material/EditNoteOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import "../stylesheets/singlepost.css"
+import { useLocation } from "react-router"
+import axios from 'axios'
 
 function SinglePost() {
+  const location = useLocation()
+  const id = location.pathname.split("/")[2];
+  const [post,setPost] = useState({});
+  useEffect(()=>{
+    const getPost = async()=>{
+      const res = await axios.get("/posts/"+id);
+      setPost(res.data);
+    };
+    getPost()
+  }
+  ,[id] )
   return (
     <div className='singlepost'>
        <div className="singlepostwrapper">
-          <img 
-            src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCxsRsAEpt-5wwEItyVY_CdBAgoxBjqvSE8Q&usqp=CAU"
-            alt= "singlepostimg"
-            className='singlepostimg' />
+        { post.photo && 
+        <img 
+        src ={post.photo}
+        alt= "singlepostimg"
+        className='singlepostimg' />
+        }
+          
           <div className='singleposttitle'>
-           <span>bot bro</span> 
+           <span>{post.title}</span> 
           <div className="singlepostedit">
              <div className="singleposticon"><EditNoteOutlinedIcon/></div> 
              <div className="singleposticon"><DeleteOutlinedIcon/></div> 
@@ -20,14 +36,19 @@ function SinglePost() {
           </div>
           <div className="singlepostinfo">
             <span className="singlepostauthor">
-                Author:<b>Lohith</b>
+                Author:<b>{post.username}</b>
             </span>
-            <span className='singlepostdate'>1 hour ago</span>
+            <span className='singlepostdate'>{new Date(post.createdAt).toDateString()}</span>
           </div>
+          <div className="postcats">
+          {post.categories && post.categories.map((val,key)=>{
+            return(
+              <span key = {key} className="postcat">{val.name}</span>
+            )
+          })}
+         </div>
           <p className='singlepostdesc'>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et sem 
-            sodales, scelerisque purus ac, viverra metus. Ut accumsan nunc a est 
-            faucibus luctus. Ut vel tincidunt mauris.
+            {post.desc}
           </p>
        </div>
     </div>
